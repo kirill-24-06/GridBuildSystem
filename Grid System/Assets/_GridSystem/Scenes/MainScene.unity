@@ -329,8 +329,7 @@ Transform:
   m_LocalPosition: {x: -4.519023, y: 0.70124024, z: 0.0051068985}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1886664544}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &396915242
@@ -351,7 +350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &396915243
 RectTransform:
   m_ObjectHideFlags: 0
@@ -892,12 +891,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886664543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.519023, y: 0.70124024, z: 0.0051068985}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 283074786}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1886664545
 MonoBehaviour:
@@ -911,10 +910,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55657a51399c3ea4ba3f3187ce61dbd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridOrigin: {x: 8, y: -12.8, z: 0}
-  testPrefab: {fileID: 8899864217741715654, guid: 3c633727b75ea5e4eaaff1751aaadceb, type: 3}
-  testPrefab2: {fileID: 8899864217741715654, guid: cf4c214a679839841b513b77e402e50e, type: 3}
-  inputReader: {fileID: 11400000, guid: 5d5933f652cfa4b488492ef6d2a99b7d, type: 2}
+  buildPanel: {fileID: -4455961344290496667, guid: 3dd6f5c0088b62840a8124c1a8c93e33, type: 3}
+  buildPanelSettings: {fileID: 11400000, guid: f4737efb3f005164d913733858a1fda4, type: 2}
+  _canvas: {fileID: 1527445127}
 --- !u!1 &2059652033
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,3 +954,4 @@ SceneRoots:
   - {fileID: 2059652034}
   - {fileID: 1235447107}
   - {fileID: 283074786}
+  - {fileID: 1886664544}
