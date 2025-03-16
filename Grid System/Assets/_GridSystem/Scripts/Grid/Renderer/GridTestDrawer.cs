@@ -26,16 +26,16 @@ namespace GridBuildSystem.Grid
             {
                 for (var j = 0; j < _grid.Height; j++)
                 {
-                    Debug.DrawLine(_grid.GetWorldPosition(i, j), _grid.GetWorldPosition(i, j + 1), _gridColor, 100f);
-                    Debug.DrawLine(_grid.GetWorldPosition(i, j), _grid.GetWorldPosition(i + 1, j), _gridColor, 100f);
+                    Debug.DrawLine(_grid.GetWorldPosition(i, j), _grid.GetWorldPosition(i, j + 1), _gridColor, 150f);
+                    Debug.DrawLine(_grid.GetWorldPosition(i, j), _grid.GetWorldPosition(i + 1, j), _gridColor, 150f);
                    
                 }
             }
         
             Debug.DrawLine(_grid.GetWorldPosition(0, _grid.Height), _grid.GetWorldPosition(_grid.Width, _grid.Height),
-                _gridColor, 100f);
+                _gridColor, 150f);
             Debug.DrawLine(_grid.GetWorldPosition(_grid.Width, 0), _grid.GetWorldPosition(_grid.Width, _grid.Height),
-                _gridColor, 100f);
+                _gridColor, 150f);
         }
     }
 }

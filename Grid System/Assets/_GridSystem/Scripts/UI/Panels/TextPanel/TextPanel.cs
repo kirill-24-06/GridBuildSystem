@@ -14,6 +14,6 @@ namespace GridBuildSystem.UI.Panels
         }
 
         public void Hide() => gameObject.SetActive(false);
-     
+        public void Show() => gameObject.SetActive(true);
     }
 }
