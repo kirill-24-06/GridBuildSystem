@@ -4,6 +4,7 @@ namespace GridBuildSystem.Grid
 {
     public class Grid2D<T> : GridMode<T> where T : IGridCell
     {
+        private const float _halve = 0.5f;
         public Grid2D(Grid<T> grid)
         {
             _grid = grid;
@@ -16,7 +17,7 @@ namespace GridBuildSystem.Grid
                 return new Vector3(x, y) * _grid.CellSize + _grid.Origin;
             }
 
-            var offset = new Vector3(_grid.CellSize, _grid.CellSize) * 0.5f;
+            var offset = new Vector3(_grid.CellSize, _grid.CellSize) * _halve;
             return new Vector3(x, y) * _grid.CellSize + _grid.Origin + offset;
         }
 
@@ -32,10 +33,10 @@ namespace GridBuildSystem.Grid
             SetElement(gridPosition.x, gridPosition.y, element);
         }
 
-        public override bool CheckSetAvailability(Vector3 worldPosition, T element)
+        public override bool CheckSetPossibility(Vector3 worldPosition, T element)
         {
             var gridPosition = ConvertWorldToGrid(worldPosition);
-            return CheckSetAvailability(gridPosition.x, gridPosition.y, element);
+            return CheckSetPossibility(gridPosition.x, gridPosition.y, element);
         }
 
         public override void RemoveElement(T element)
@@ -82,7 +83,7 @@ namespace GridBuildSystem.Grid
             return default;
         }
 
-        protected override bool CheckSetAvailability(int x, int y, T element)
+        protected override bool CheckSetPossibility(int x, int y, T element)
         {
             if (x < 0 || y < 0 || x > _grid.Width - element.Size.x || y > _grid.Height - element.Size.y) return false;
 

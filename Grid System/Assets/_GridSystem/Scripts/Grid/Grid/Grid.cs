@@ -2,17 +2,10 @@ using UnityEngine;
 
 namespace GridBuildSystem.Grid
 {
-    public interface IGridCell
-    {
-        Vector3Int Position { get; }
-        Vector3Int Size { get; }
-        void SetPosition(Vector3Int position);
-    }
-
     public class Grid<T> where T : IGridCell
     {
-        public int Width { get; private set; }
-        public int Height { get; private set; }
+        public int Width { get; }
+        public int Height { get; }
         public float CellSize { get; private set; }
         public Vector3 Origin { get; private set; }
 

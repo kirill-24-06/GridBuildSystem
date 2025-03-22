@@ -3,7 +3,8 @@
     "rootNamespace": "GridBuildSystem.BuildSystem",
     "references": [
         "GUID:363b54d9f4ded0d47a88007a7757caa7",
-        "GUID:de0518ea85dff51439f21f266afbaabe"
+        "GUID:de0518ea85dff51439f21f266afbaabe",
+        "GUID:ff41121a5e1882d4891d1b224638ac5e"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

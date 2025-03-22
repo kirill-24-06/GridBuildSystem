@@ -1,9 +1,11 @@
+using System.Collections.Generic;
 using GridBuildSystem.BuildSystem.Buildings;
 using GridBuildSystem.Grid;
 using GridBuildSystem.Input;
 using GridBuildSystem.UI.Panels;
 using GridBuildSystem.BuildSystem;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace GridBuildSystem.Testing
 {
@@ -12,67 +14,85 @@ namespace GridBuildSystem.Testing
         public BuildPanel buildPanel;
         public BuildPanelSettings buildPanelSettings;
         
-        public TextPanel _textPanel;
+        public TextPanel textPanel;
         public TextPanelSettings textPanelSettings;
         
         public GridSettings gridSettings;
-        private GridMode<IBuilding> grid;
-        private GridTestDrawer _gridTestDrawer;
+        public GridDrawerSettings gridDrawerSettings;
+        private GridMode<IBuilding> _grid;
+        private IDrawer _gridDrawer;
         
         public InputReader inputReader;
-        public BuildingSettings testBuilding;
+        public BuildingSettings[] testBuildings;
+        public Transform Environment;
         
-        private PlacementModeTest _placementModeTest;
-        private DestroyModeTest _destroyModeTest;
+        private PlacementMode _placementMode;
+        private DestroyMode _destroyMode;
         
         private Camera _camera;
-        public Canvas _canvas;
+        public Canvas canvas;
+
 
         private void Awake()
         {
-            var panel = Instantiate(buildPanel, _canvas.transform);
-            panel.Construct(buildPanelSettings);
+            var buildPanel = Instantiate(this.buildPanel, canvas.transform);
+            buildPanel.Construct(buildPanelSettings, testBuildings);
             
-            var textPanel = Instantiate(_textPanel, _canvas.transform);
+            var textPanel = Instantiate(this.textPanel, canvas.transform);
             textPanel.Construct(textPanelSettings);
             textPanel.Hide();
             
             _camera = Camera.main;
             
-            panel.OnBuildingChoose += Debug.Log;
-
-            grid = gridSettings.GetGrid<IBuilding>();
-            _gridTestDrawer = new GridTestDrawer(grid, Color.white);
+            _grid = gridSettings.GetGrid<IBuilding>();
             
-            _placementModeTest = new PlacementModeTest(grid, _camera, inputReader, testBuilding);
-            panel.OnPlacementModeActive += _placementModeTest.Enter;
+            var gridTexture = Instantiate(gridDrawerSettings.TexturePrefab,gridSettings.GridOrigin,Quaternion.identity);
+            gridTexture.transform.SetParent(Environment);
+            gridTexture.SetActive(false);
             
-            _destroyModeTest = new DestroyModeTest(grid, _camera, inputReader);
-            panel.OnDestroyModeActive += _destroyModeTest.Enter;
+            var gridDrawer = new GridDrawer(gridDrawerSettings,gridTexture);
+            _gridDrawer = gridDrawer;
 
-            _placementModeTest.OnEnter += () =>
+            var buildings = new Dictionary<string, IBuildingSettings>(testBuildings.Length);
+            foreach (var buildingSettings in testBuildings)
             {
-                _gridTestDrawer.Draw();
-                panel.Hide();
+                buildings.Add(buildingSettings.BuildingName, buildingSettings);
+            }
+
+            var buildingsSpawner = new DefaultBuildingsSpawner(buildings, Environment);
+            buildPanel.OnBuildingChoose += buildingsSpawner.OnBuildingChoose;
+            
+            _placementMode = new PlacementMode(_grid, _camera, inputReader,buildingsSpawner);
+            buildPanel.OnPlacementModeActive += _placementMode.Enter;
+            
+            _destroyMode = new DestroyMode(_grid, _camera, inputReader, buildingsSpawner);
+            buildPanel.OnDestroyModeActive += _destroyMode.Enter;
+
+            _placementMode.OnEnter += () =>
+            {
+                _gridDrawer.Draw();
+                buildPanel.Hide();
                 textPanel.Show();
             };
 
-            _placementModeTest.OnExit += () =>
+            _placementMode.OnExit += () =>
             {
-                panel.Show();
+                buildPanel.Show();
+                gridDrawer.Hide();
                 textPanel.Hide();
             };
             
-            _destroyModeTest.OnEnter += () =>
+            _destroyMode.OnEnter += () =>
             {
-                _gridTestDrawer.Draw();
-                panel.Hide();
+                _gridDrawer.Draw();
+                buildPanel.Hide();
                 textPanel.Show();
             };
 
-            _destroyModeTest.OnExit += () =>
+            _destroyMode.OnExit += () =>
             {
-                panel.Show();
+                buildPanel.Show();
+                gridDrawer.Hide();
                 textPanel.Hide();
             };
         }
