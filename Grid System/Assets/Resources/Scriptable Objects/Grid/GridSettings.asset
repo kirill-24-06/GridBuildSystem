@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GridSettings
   m_EditorClassIdentifier: 
   <GridMode>k__BackingField: 1
-  <Width>k__BackingField: 60
-  <Height>k__BackingField: 20
-  <CellSize>k__BackingField: 1.5
-  <GridOrigin>k__BackingField: {x: -43.2, y: -8.32, z: 0}
+  <Width>k__BackingField: 30
+  <Height>k__BackingField: 17
+  <CellSize>k__BackingField: 3
+  <GridOrigin>k__BackingField: {x: -44.44448, y: -25.006, z: 0}

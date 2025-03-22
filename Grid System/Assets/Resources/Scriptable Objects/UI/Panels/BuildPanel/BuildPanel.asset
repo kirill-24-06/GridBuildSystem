@@ -12,14 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ad8d212e8622d34383c05abb70042d6, type: 3}
   m_Name: BuildPanel
   m_EditorClassIdentifier: 
-  building1:
-    <BuildingImage>k__BackingField: {fileID: 21300000, guid: 69497c39218c3434089b0c5f52252429, type: 3}
-    <BuildingName>k__BackingField: House
-  building2:
-    <BuildingImage>k__BackingField: {fileID: 21300000, guid: f3664a102ddbcad44b5e70278a2dbc91, type: 3}
-    <BuildingName>k__BackingField: Farm
-  building3:
-    <BuildingImage>k__BackingField: {fileID: 21300000, guid: 5115317eef302b64ba155ff5178e4d0a, type: 3}
-    <BuildingName>k__BackingField: TownHall
+  _buildingSettings:
+  - {fileID: 11400000, guid: 37674c81e8223fc4e8f2963b2b38e94b, type: 2}
+  - {fileID: 11400000, guid: 8b7f46feb950f6f449a42d3d6d092be6, type: 2}
+  - {fileID: 11400000, guid: c0f86b1a6f960d840a509cc6e147c713, type: 2}
   textSettings1: {fileID: 11400000, guid: 856413e7e16a4354b918f778a04ca200, type: 2}
   textSettings2: {fileID: 11400000, guid: f5972613a478f9843a2cefca84a3d632, type: 2}
