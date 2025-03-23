@@ -5,7 +5,13 @@
         "GUID:363b54d9f4ded0d47a88007a7757caa7",
         "GUID:de0518ea85dff51439f21f266afbaabe",
         "GUID:faecb794af76b534ba06a70076bea232",
+<<<<<<< Updated upstream
         "GUID:97da45b98198d7440975dcb1ee3712cb"
+=======
+        "GUID:97da45b98198d7440975dcb1ee3712cb",
+        "GUID:76d3fe4d05cd39142931bc67b00df30f",
+        "GUID:ff41121a5e1882d4891d1b224638ac5e"
+>>>>>>> Stashed changes
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
