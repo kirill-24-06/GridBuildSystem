@@ -1,70 +1,108 @@
+<<<<<<< Updated upstream
+=======
+using System;
 using System.Collections.Generic;
 using GridBuildSystem.BuildSystem.Buildings;
+>>>>>>> Stashed changes
 using GridBuildSystem.Grid;
-using GridBuildSystem.Input;
 using GridBuildSystem.UI.Panels;
-using GridBuildSystem.BuildSystem;
+<<<<<<< Updated upstream
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.UI;
+=======
+using GridBuildSystem.BuildSystem;
+using GridBuildSystem.LoadSystem;
+using GridBuildSystem.SaveSystem;
+using UnityEngine;
+>>>>>>> Stashed changes
 
 namespace GridBuildSystem.Testing
 {
     public class SceneTest : MonoBehaviour
     {
-        public BuildPanel buildPanel;
+        public BuildPanel BuildPanel;
         public BuildPanelSettings buildPanelSettings;
+<<<<<<< Updated upstream
         
-        public TextPanel textPanel;
+        public GridSettings gridSettings;
+        public Button testButton;
+        private GridTestDrawer _gridTestDrawer;
+        
+        public Canvas _canvas;
+
+        private void Awake()
+        {
+            var panel = Instantiate(buildPanel, _canvas.transform);
+            panel.Construct(buildPanelSettings);
+=======
+
+        public TextPanel TextPanel;
         public TextPanelSettings textPanelSettings;
-        
+
         public GridSettings gridSettings;
         public GridDrawerSettings gridDrawerSettings;
         private GridMode<IBuilding> _grid;
         private IDrawer _gridDrawer;
-        
+
         public InputReader inputReader;
         public BuildingSettings[] testBuildings;
         public Transform Environment;
-        
+
         private PlacementMode _placementMode;
         private DestroyMode _destroyMode;
         
+        public XOREncryptorSettings EncryptorSettings;
+
         private Camera _camera;
         public Canvas canvas;
+
+        private ISaveSystem _saveSystem;
+        private ILoadSystem _loadSystem;
 
 
         private void Awake()
         {
-            var buildPanel = Instantiate(this.buildPanel, canvas.transform);
+            var buildPanel = Instantiate(BuildPanel, canvas.transform);
             buildPanel.Construct(buildPanelSettings, testBuildings);
-            
-            var textPanel = Instantiate(this.textPanel, canvas.transform);
+
+            var textPanel = Instantiate(TextPanel, canvas.transform);
             textPanel.Construct(textPanelSettings);
             textPanel.Hide();
-            
+
             _camera = Camera.main;
-            
+
             _grid = gridSettings.GetGrid<IBuilding>();
-            
-            var gridTexture = Instantiate(gridDrawerSettings.TexturePrefab,gridSettings.GridOrigin,Quaternion.identity);
+
+            var gridTexture = Instantiate(gridDrawerSettings.TexturePrefab, gridSettings.GridOrigin,
+                Quaternion.identity);
             gridTexture.transform.SetParent(Environment);
             gridTexture.SetActive(false);
-            
-            var gridDrawer = new GridDrawer(gridDrawerSettings,gridTexture);
+
+            var gridDrawer = new GridDrawer(gridDrawerSettings, gridTexture);
             _gridDrawer = gridDrawer;
+>>>>>>> Stashed changes
 
-            var buildings = new Dictionary<string, IBuildingSettings>(testBuildings.Length);
-            foreach (var buildingSettings in testBuildings)
-            {
-                buildings.Add(buildingSettings.BuildingName, buildingSettings);
-            }
+            panel.OnBuildingChoose += s => Debug.Log(s);
+            panel.OnPlacementModeActive += () => Debug.Log("Placement Mode");
+            panel.OnDestroyModeActive += () => Debug.Log("Destroy Mode");
 
-            var buildingsSpawner = new DefaultBuildingsSpawner(buildings, Environment);
-            buildPanel.OnBuildingChoose += buildingsSpawner.OnBuildingChoose;
+<<<<<<< Updated upstream
+            var grid = gridSettings.GetGrid<Cell>();
+            _gridTestDrawer = new GridTestDrawer(grid, Color.white);
             
-            _placementMode = new PlacementMode(_grid, _camera, inputReader,buildingsSpawner);
+            testButton.onClick.AddListener(() => _gridTestDrawer.Draw());
+        }
+
+        public class Cell : IGridCell{}
+=======
+            var buildingsHolder = new BuildingsSaveDataHolder();
+
+            var buildingsSpawner = new DefaultBuildingsSpawner(buildings, buildingsHolder, Environment);
+            buildPanel.OnBuildingChoose += buildingsSpawner.SetValue;
+
+            _placementMode = new PlacementMode(_grid, _camera, inputReader, buildingsSpawner);
             buildPanel.OnPlacementModeActive += _placementMode.Enter;
-            
+
             _destroyMode = new DestroyMode(_grid, _camera, inputReader, buildingsSpawner);
             buildPanel.OnDestroyModeActive += _destroyMode.Enter;
 
@@ -81,7 +119,7 @@ namespace GridBuildSystem.Testing
                 gridDrawer.Hide();
                 textPanel.Hide();
             };
-            
+
             _destroyMode.OnEnter += () =>
             {
                 _gridDrawer.Draw();
@@ -95,11 +133,32 @@ namespace GridBuildSystem.Testing
                 gridDrawer.Hide();
                 textPanel.Hide();
             };
+
+            var encryptor = new XOREncryptor(EncryptorSettings);
+            
+            var serializer = new JSONSerializer(encryptor);
+
+            _saveSystem = new BuildingsSaveSystem(buildingsHolder, serializer);
+
+            var loader = new JSONBuildingsLoader(encryptor);
+            _loadSystem = new BuildingsLoadSystem(loader, buildingsSpawner, buildingsSpawner, _grid);
         }
 
         private void Start()
         {
+            try
+            {
+                _loadSystem.Load();
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e);
+            }
+
             inputReader.EnableActionMap();
         }
+
+        private void OnDestroy() => _saveSystem.Save();
+>>>>>>> Stashed changes
     }
 }

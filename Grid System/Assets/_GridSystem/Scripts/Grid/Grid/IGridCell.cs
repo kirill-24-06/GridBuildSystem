@@ -4,8 +4,8 @@ namespace GridBuildSystem.Grid
 {
     public interface IGridCell
     {
-        Vector3Int Position { get; }
+        Vector2Int Position { get; }
         Vector3Int Size { get; }
-        void SetPosition(Vector3Int position);
+        void SetPosition(Vector2Int position);
     }
 }

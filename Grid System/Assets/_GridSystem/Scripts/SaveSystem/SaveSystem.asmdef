@@ -1,7 +1,10 @@
 {
     "name": "SaveSystem",
-    "rootNamespace": "",
-    "references": [],
+    "rootNamespace": "GridBuildSystem.SaveSystem",
+    "references": [
+        "BuildSystem",
+        "Grid"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
