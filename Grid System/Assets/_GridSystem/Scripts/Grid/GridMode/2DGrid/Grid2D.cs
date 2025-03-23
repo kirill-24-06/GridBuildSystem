@@ -22,21 +22,6 @@ namespace GridBuildSystem.Grid
             var gridPosition = ConvertWorldToGrid(worldPosition);
             SetElement(gridPosition.x, gridPosition.y, element);
         }
-        
-        public override void SetElement(int x, int y, T element)
-        {
-            if (x < 0 || y < 0 || x > _grid.Width - element.Size.x || y > _grid.Height - element.Size.y) return;
-
-            element.SetPosition(new Vector2Int(x, y));
-
-            for (var i = 0; i < element.Size.x; i++)
-            {
-                for (var j = 0; j < element.Size.y; j++)
-                {
-                    _grid.SetValue(x + i, y + j, element);
-                }
-            }
-        }
 
         protected override Vector2Int ConvertWorldToGrid(Vector3 worldPosition)
         {
@@ -46,7 +31,6 @@ namespace GridBuildSystem.Grid
             return new Vector2Int(x, y);
         }
 
-<<<<<<< Updated upstream
         protected override void SetElement(int x, int y, T element)
         {
             if (x >= 0 && y >= 0 && x < _grid.Width && y < _grid.Height)
@@ -55,9 +39,6 @@ namespace GridBuildSystem.Grid
             }
         }
 
-=======
-        
->>>>>>> Stashed changes
         protected override T GetElement(int x, int y)
         {
             if (x >= 0 && y >= 0 && x < _grid.Width && y < _grid.Height)
