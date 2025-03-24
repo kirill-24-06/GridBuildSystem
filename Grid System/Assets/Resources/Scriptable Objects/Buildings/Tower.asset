@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d34ff507463a472fb51c4ae3029460a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 74f8381ebfaa4ea4a8b58e10c3e9f020, type: 3}
   m_Name: Tower
   m_EditorClassIdentifier: 
-  <Prefab>k__BackingField: {fileID: 9029978135382180377, guid: 2c1d2c36a256e5649843203fa37012b1, type: 3}
+  <Prefab>k__BackingField: {fileID: 9029978135382180377, guid: 15b52ee892b23f84cba454fcaaae93c3, type: 3}
   <BuildingImage>k__BackingField: {fileID: 21300000, guid: dd3dfdab3d32d204e88266895e7f312e, type: 3}
   <BuildingName>k__BackingField: Tower
   <Size>k__BackingField: {x: 1, y: 2, z: 0}
-  <AvailableColor>k__BackingField: {r: 0, g: 0.6603774, b: 0, a: 0.6666667}
-  <UnavailableColor>k__BackingField: {r: 0.5849056, g: 0, b: 0, a: 0.6666667}
+  <AvailableColor>k__BackingField: {r: 0, g: 1, b: 0, a: 0.5882353}
+  <UnavailableColor>k__BackingField: {r: 1, g: 0, b: 0, a: 0.5882353}
   <DefaultColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}

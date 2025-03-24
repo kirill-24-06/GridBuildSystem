@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcddda6ad7b24ed48b3415d46e997e8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a0c2f3140bc4f048992bc43b7c625cf, type: 3}
   m_Name: GridVisualSettings
   m_EditorClassIdentifier: 
   <GridSettings>k__BackingField: {fileID: 11400000, guid: 39c7e413ec1e12f42974736821091873, type: 2}
-  <TexturePrefab>k__BackingField: {fileID: 8783262928590286529, guid: f2f1fcdef470c0342aad86f7182dde60, type: 3}
+  <TexturePrefab>k__BackingField: {fileID: 8783262928590286529, guid: 6168b545175cb814cb94f2015f30764c, type: 3}
   <GridColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
-  <GridLinesThickness>k__BackingField: 0.0271
+  <GridLinesThickness>k__BackingField: 0.0288
