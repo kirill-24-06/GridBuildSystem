@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace GridBuildSystem.Grid
 {
-    public class GridDrawer : IDrawer
+    public class GridDrawer : IGameObjectDrawer
     {
         private static readonly int Scale = Shader.PropertyToID("_Scale");
         private static readonly int Thickness = Shader.PropertyToID("_Thickness");
@@ -27,7 +27,7 @@ namespace GridBuildSystem.Grid
 
             var texture = _gridTexture.transform.Find("Texture").gameObject;
 
-            var textureScale = gridScale * gridDrawerSettings.GridSettings.CellSize;//_scaleModifier;
+            var textureScale = gridScale * gridDrawerSettings.GridSettings.CellSize;
             var texturePosition = textureScale / _positionModifier;
 
             texture.transform.localScale = textureScale;

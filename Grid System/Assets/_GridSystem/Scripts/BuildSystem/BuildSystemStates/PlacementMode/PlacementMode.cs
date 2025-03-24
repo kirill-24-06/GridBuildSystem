@@ -10,7 +10,7 @@ namespace GridBuildSystem.BuildSystem
         private readonly ISpawner _buildingsSpawner;
         private IBuilding _activeBuilding;
 
-        public PlacementMode(GridMode<IBuilding> grid, Camera camera, IInputReader input, ISpawner buildingsSpawner)
+        public PlacementMode(GridMode<IBuilding> grid, ISpawner buildingsSpawner, IInputReader input, Camera camera)
         {
             _grid = grid;
             _camera = camera;

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88499c911a54d29a516eb93a3b343cc, type: 3}
+  m_Name: Grid Build System Settings
+  m_EditorClassIdentifier: 
+  _gridSettings: {fileID: 11400000, guid: 39c7e413ec1e12f42974736821091873, type: 2}
+  _gridVisualSettings: {fileID: 11400000, guid: 6984657504879f4488c96abfaa7594bf, type: 2}
+  _buildPanelSettings: {fileID: 11400000, guid: f4737efb3f005164d913733858a1fda4, type: 2}
+  _placePanelSettings: {fileID: 11400000, guid: f6e451e266b225a4d8f831787d7811c2, type: 2}
+  _destroyPanelSettings: {fileID: 11400000, guid: 8f7568e2b1376f94a8fa2485a104fb0f, type: 2}
+  _buildingSettings:
+  - {fileID: 11400000, guid: 5ee2c9c1b0c53ba46a934ba17a737344, type: 2}
+  - {fileID: 11400000, guid: 8b44f7ce4e91cc44682f6f894d3a6326, type: 2}
+  - {fileID: 11400000, guid: 2a54c8ed986fe7b4b85ce8699ff1b90b, type: 2}
+  _inputReader: {fileID: 11400000, guid: 5d5933f652cfa4b488492ef6d2a99b7d, type: 2}
+  <SaveSystemGO>k__BackingField: {fileID: 7852878030834037200, guid: 71a8fcd90dfb06b449aea1c80d0e67e7, type: 3}
+  <LoadSystemGO>k__BackingField: {fileID: 2514135927691651398, guid: 193a1837de17c5948802405222a5318d, type: 3}
+  <XOREncryptorSettings>k__BackingField: {fileID: 11400000, guid: 51455fcaec388574aaabcb14d88a24bc, type: 2}
+  <SavePath>k__BackingField: /save.json

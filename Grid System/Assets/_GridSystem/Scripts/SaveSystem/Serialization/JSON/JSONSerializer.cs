@@ -15,7 +15,7 @@ namespace GridBuildSystem.SaveSystem
             _path = path;
         }
         
-        public void Serialize(ISaveData data)
+        public void Serialize<T>(T data)
         {
             var json = JsonUtility.ToJson(data, true);
 

@@ -9,7 +9,7 @@ namespace GridBuildSystem.BuildSystem
     {
         private readonly IReleaser _buildingsReleaser;
 
-        public DestroyMode(GridMode<IBuilding> grid, Camera camera, IInputReader input, IReleaser releaser)
+        public DestroyMode(GridMode<IBuilding> grid, IReleaser releaser, IInputReader input, Camera camera)
         {
             _grid = grid;
             _camera = camera;
@@ -21,7 +21,7 @@ namespace GridBuildSystem.BuildSystem
         {
             _input.OnLeftMouseClick += DestroyBuilding;
             _input.OnRightMouseClick += Exit;
-            
+
             base.Enter();
         }
 
@@ -29,7 +29,7 @@ namespace GridBuildSystem.BuildSystem
         {
             _input.OnLeftMouseClick -= DestroyBuilding;
             _input.OnRightMouseClick -= Exit;
-            
+
             base.Exit();
         }
 

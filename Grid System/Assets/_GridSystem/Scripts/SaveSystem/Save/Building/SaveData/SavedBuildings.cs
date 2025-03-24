@@ -3,7 +3,7 @@ using System;
 namespace GridBuildSystem.SaveSystem
 {
     [Serializable]
-    public struct SavedBuildings: ISaveData
+    public struct SavedBuildings
     {
         public BuildingSaveData[] Buildings;
     }

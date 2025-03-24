@@ -172,6 +172,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c055aa1ebb3d84eb5c85e9608984f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _settings: {fileID: 11400000, guid: 4c3f203c9a5130d468657087bebba02f, type: 2}
+  _parentTransform: {fileID: 283074786}
+  _canvas: {fileID: 1527445127}
 --- !u!1 &283074785
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,64 +619,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &1886664543
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1886664544}
-  - component: {fileID: 1886664545}
-  m_Layer: 0
-  m_Name: Testing
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1886664544
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1886664543}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.519023, y: 0.70124024, z: 0.0051068985}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1886664545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1886664543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55657a51399c3ea4ba3f3187ce61dbd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildPanel: {fileID: -4455961344290496667, guid: 8b5af4c9cc3fd1746bf96d19c604e635, type: 3}
-  buildPanelSettings: {fileID: 11400000, guid: f4737efb3f005164d913733858a1fda4, type: 2}
-  textPanel: {fileID: -4011746500552662260, guid: 9793e2d04d126994f84b6bc18c078d8a, type: 3}
-  textPanelSettings: {fileID: 11400000, guid: f6e451e266b225a4d8f831787d7811c2, type: 2}
-  gridSettings: {fileID: 11400000, guid: 39c7e413ec1e12f42974736821091873, type: 2}
-  gridDrawerSettings: {fileID: 11400000, guid: 6984657504879f4488c96abfaa7594bf, type: 2}
-  inputReader: {fileID: 11400000, guid: 5d5933f652cfa4b488492ef6d2a99b7d, type: 2}
-  testBuildings:
-  - {fileID: 11400000, guid: 5ee2c9c1b0c53ba46a934ba17a737344, type: 2}
-  - {fileID: 11400000, guid: 8b44f7ce4e91cc44682f6f894d3a6326, type: 2}
-  - {fileID: 11400000, guid: 2a54c8ed986fe7b4b85ce8699ff1b90b, type: 2}
-  Environment: {fileID: 283074786}
-  EncryptorSettings: {fileID: 11400000, guid: 51455fcaec388574aaabcb14d88a24bc, type: 2}
-  canvas: {fileID: 1527445127}
 --- !u!1 &2059652033
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,4 +717,3 @@ SceneRoots:
   - {fileID: 2059652034}
   - {fileID: 1235447107}
   - {fileID: 283074786}
-  - {fileID: 1886664544}

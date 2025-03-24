@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23394973225ab374fa26f9dcfd645ac1, type: 3}
   m_Name: BuildPanel
   m_EditorClassIdentifier: 
+  <Prefab>k__BackingField: {fileID: -4455961344290496667, guid: 8b5af4c9cc3fd1746bf96d19c604e635, type: 3}
   textSettings1: {fileID: 11400000, guid: 856413e7e16a4354b918f778a04ca200, type: 2}
   textSettings2: {fileID: 11400000, guid: f5972613a478f9843a2cefca84a3d632, type: 2}

@@ -6,6 +6,8 @@ namespace GridBuildSystem.UI.Panels
     [CreateAssetMenu(fileName = "BuildPanelSettings", menuName = "ScriptableObjects/UI/Panels/BuildPanel", order = 0)]
     public class BuildPanelSettings : ScriptableObject, IBuildPanelSettings
     {
+        [field: SerializeField] public BuildPanel Prefab { get; private set; }
+
         [SerializeField] private TextSettings textSettings1;
         [SerializeField] private TextSettings textSettings2;
 
