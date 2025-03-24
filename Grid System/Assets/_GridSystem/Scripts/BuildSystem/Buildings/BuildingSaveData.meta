@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Grid System/Assets/External Assets.meta
-guid: f3320a248c342454b8114ade11bb1f64
-========
 guid: a98c74ba3d37903409be29b9423fc43b
->>>>>>>> origin/Save-System:Grid System/Assets/_GridSystem/Scripts/BuildSystem/Buildings/BuildingSaveData.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

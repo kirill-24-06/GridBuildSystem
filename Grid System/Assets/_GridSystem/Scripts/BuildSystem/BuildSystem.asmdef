@@ -1,0 +1,17 @@
+{
+    "name": "BuildSystem",
+    "rootNamespace": "GridBuildSystem.BuildSystem",
+    "references": [
+        "GUID:363b54d9f4ded0d47a88007a7757caa7",
+        "GUID:de0518ea85dff51439f21f266afbaabe"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

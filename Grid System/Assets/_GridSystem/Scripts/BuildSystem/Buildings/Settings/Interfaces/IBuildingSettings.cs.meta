@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Grid System/Assets/_GridSystem/Scripts/Grid/Renderer/IDrawer.cs.meta
-guid: f2546af7fa4917144859d9d62d493634
-========
 guid: 18baaf1c2eb5a0940856c63e5326ed22
->>>>>>>> origin/Save-System:Grid System/Assets/_GridSystem/Scripts/BuildSystem/Buildings/Settings/Interfaces/IBuildingSettings.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

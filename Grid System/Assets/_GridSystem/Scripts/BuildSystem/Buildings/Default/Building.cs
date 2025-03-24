@@ -9,20 +9,21 @@ namespace GridBuildSystem.BuildSystem.Buildings
         public Transform Prefab { get; private set; }
         public Vector3Int Size => _settings.Size;
         public string Name => _settings.BuildingName;
-        public Vector3Int Position { get; private set; }
+        public Vector2Int Position { get; private set; }
+        public Vector2Int GridPosition => Position;
 
         public Building(IBuildingSettings settings)
         {
             _settings = settings;
         }
 
-        public void Initialize(Transform gameObjectTransform, Renderer renderer)
+        public void Initialize(Transform prefab, Renderer renderer)
         {
-            Prefab = gameObjectTransform;
+            Prefab = prefab;
             _renderer = renderer;
         }
 
-        public void SetPosition(Vector3Int position) => Position = position;
+        public void SetPosition(Vector2Int position) => Position = position;
 
         public void ChangeColor(bool canBePlaced)
         {
